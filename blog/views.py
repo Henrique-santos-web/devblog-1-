@@ -5,6 +5,4 @@ def home(request):
     return render(request, "blog/index.html")
 
 def sobre_nos(request):
-    mensagem = "<h1>Sobre o DevBlog!</h1>"
-
-    return HttpResponse(mensagem)
+    return render(request, "blog/sobre.html")
