@@ -1,7 +1,10 @@
 from django.db import models
 
 class Categoria(models.Model):
+<<<<<<< HEAD
     #*Aqui estamos colocando o CharField, que serve para usar função max_length, e vai limitar as caracteres (de acordo com o numero que atribuir a ela)
+=======
+>>>>>>> 42cb02ce311e40ac2bfb61be4ea2752dbb10aa74
     nome = models.CharField(max_length=100)
 
     def __str__(self):
@@ -10,6 +13,7 @@ class Categoria(models.Model):
 
 class Artigo(models.Model):
     titulo = models.CharField(max_length=200)
+<<<<<<< HEAD
     #* Sem limite de caracteres
     conteudo = models.TextField()
 
@@ -26,6 +30,12 @@ class Artigo(models.Model):
     #    e não o contrário
     #    Ou seja, por ForeignKey estar dentro de artigo, o ForeignKey pega o artigo e
     #    diz que ele pertence à Categoria
+=======
+    conteudo = models.TextField()
+    data_publicacao = models.DateTimeField(auto_now_add=True)
+
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+>>>>>>> 42cb02ce311e40ac2bfb61be4ea2752dbb10aa74
 
     autor = models.CharField(max_length=50, default="Admin")
 
