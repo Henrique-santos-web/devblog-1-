@@ -2,7 +2,11 @@
 
 {% block content %}
 
-    <h2>Últimas Notícias</h2>
+    {% if categoria_selecionada %}
+        <h2>Notícias sobre {{ categoria_selecionada }}</h2>
+    {% else %}
+        <h2>Últimas Notícias</h2>
+    {% endif %}
 
     {% for artigo in lista_artigos %}
 
