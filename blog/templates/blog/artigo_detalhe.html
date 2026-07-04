@@ -1,0 +1,23 @@
+{# O template de leitura #}
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+    {# Botão simples para voltar #}
+    <a href="{% url 'home' %}" class="btn btn-outline-secondary btn-sm mb-4">Voltar</a>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            {# Imprimindo os dados do ÚNICO artigo #}
+            <h1 class="text-primary">{{ artigo.titulo }}</h1>
+
+            <p class="text-muted">
+                <strong>Por:</strong> {{ artigo.autor }} |
+                <strong>Categoria:</strong> {{ artigo.categoria.nome }}
+            </p>
+            <hr>
+            {# O texto completo da notícia #}
+            <p style="font-size: 1.1rem; line-height: 1.8;">{{ artigo.conteudo }}</p>
+        </div>
+    </div>
+{% endblock  %}
