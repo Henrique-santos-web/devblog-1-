@@ -7,5 +7,8 @@ urlpatterns = [
     path('sobre/', views.sobre_nos, name='sobre_nos'),
     # a nova URL dinâmica:
     # <int:id> diz: Espere um número inteiro aqui e o chamde de ID
-    path('artigo/<int:id>', views.artigo_detalhe, name='detalhe_artigo')
+    path('artigo/<int:id>', views.artigo_detalhe, name='detalhe_artigo'),
+    path('contato/', views.fale_conosco, name='fale_conosco'),
+    path('api/artigos/', views.api_listar_artigo, name="api_artigos"),
+    path('api/categotias/', views.api_listar_categorias, name='api_categorias')
 ]
