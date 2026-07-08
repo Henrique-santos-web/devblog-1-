@@ -84,11 +84,8 @@ def api_listar_artigo(request):
 def api_listar_categorias(request):
     categorias = Categoria.objects.all()
 
-    for categoria in categorias:
-
-        serializer = CategoriaSerializer(categoria, many=True)
-
-        return Response(serializer.data)
+    serializer = CategoriaSerializer(categorias, many=True)
+    return Response(serializer.data)
 
 
 

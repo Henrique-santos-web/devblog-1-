@@ -11,6 +11,6 @@ urlpatterns = [
     path('contato/', views.fale_conosco, name='fale_conosco'),
 
     path('api/artigos/', views.api_listar_artigo, name="api_artigos"),
-    path('api/categotias/', views.api_listar_categorias, name='api_categorias'),
+    path('api/categorias/', views.api_listar_categorias, name='api_categorias'),
     path('api/artigos/novo/', views.api_criar_artigo, name='api_criar_artigo')
 ]
