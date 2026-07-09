@@ -3,7 +3,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 
-from .fomrs import Contatoform
+from .forms import Contatoform
 from .models import Artigo, Categoria
 from .serializers import ArtigoSerializer, CategoriaSerializer
 
