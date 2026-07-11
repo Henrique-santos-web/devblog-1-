@@ -7,6 +7,8 @@ from .forms import Contatoform
 from .models import Artigo, Categoria
 from .serializers import ArtigoSerializer, CategoriaSerializer
 
+from django.core.paginator import Paginator
+
 def home(request):
 
     categoria_selecionada = request.GET.get('categoria')
@@ -18,8 +20,18 @@ def home(request):
     else:
         noticias = Artigo.objects.all()
 
+    busca = request.GET.get('q')
+
+    if busca:
+        noticias = noticias.filter(titulo__icontains=busca)
+
+    paginator = Paginator(noticias, 5)
+
+    numero_da_pagina = request.GET.get('page')
+    page_onj = paginator.get_page(numero_da_pagina)
+
     contexto = {
-        'lista_artigos': noticias,
+        'lista_artigos': page_onj,
         'lista_categorias': categorias,
         'categoria_selecionada': categoria_selecionada
     }
